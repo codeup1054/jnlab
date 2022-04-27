@@ -1,3 +1,4 @@
+# 2022-04-25 tm() return lap
 # 2021-05-30 xlspcl создает pcl файл 
 # 2020-09-21 инициализация поссредством import adds; from adds import * ; init()
 
@@ -88,7 +89,8 @@ def tm(txt="", s=0):
         print(lap_time,
         from_start_time,
         str(txt) );
-        l = time.time()     
+        l = time.time()
+    return l 
 
 
 # 2020-08-26  file log
