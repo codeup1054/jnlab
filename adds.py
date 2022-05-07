@@ -3,7 +3,7 @@
 # 2020-09-21 инициализация поссредством import adds; from adds import * ; init()
 
 global l,start, dfr
-global display, HTML,reload
+global display, HTML, reload
 from pathlib import Path
 global tm,ii, merge_OKVED,start, _log
 from xlsxwriter.utility import xl_rowcol_to_cell
@@ -24,13 +24,8 @@ class _o:
         self.__dict__.update(entries)
 
         
-if 'dfr' in locals():
-    1
-#     ii(dfr,k=0)    
-else:    
-    dfr = {}
-
-    
+if 'dfr' in locals(): 1  
+else: dfr = {}
 
 global xlspcl
 def xlspcl(fname, dfr_name = 'tmp'):
@@ -109,15 +104,19 @@ def _log(str_log = '', add_time = False, work_folder = r'tmp2/', fname = r'log.t
     with open(work_folder + fname, 'a+') as original: data = original.read()
     with open(work_folder + fname, 'w') as modified: modified.write(str_log + data) 
         
-        
+global plt        
 
 def init():
 #     global dfr
     
-    global time, gmtime, strftime, datetime,l,start
+    global time, gmtime, strftime, datetime,l,start, plt
+    
     from time import gmtime, strftime
     import time
     import datetime
+    
+    global plt
+    import matplotlib.pyplot as plt
     
     l = start = time.time()
 
@@ -173,7 +172,7 @@ def init():
     
     lst = dir(adds)
         
-    n = 10
+    n = 16
     
     display(HTML(pd.DataFrame ( [lst[i:i+n] for i in range(0,len(lst),n)], 
                               columns = [z+1 for z in range(n)]).fillna('-').to_html()))
